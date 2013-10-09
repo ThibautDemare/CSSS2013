@@ -1,0 +1,297 @@
+\documentclass{beamer}
+
+\usepackage{caption}
+\usepackage{subcaption}
+
+\definecolor{red}{rgb}{0.93,0.00,0.00}
+\usecolortheme[named=red]{structure}
+\usetheme{Madrid}
+
+\setbeamercovered{transparent}
+
+\title[Ghonorre grimpante's dissemination]{Sexually Transmitted Disease's spread Inside a social network}
+\author{Alexandre, Dorra, Joanne, Lancine, Mariem and Thibaut}
+\institute{CSSS 2013, Le Havre}
+\date{July 18, 2013}
+
+\setbeamertemplate{footline}{
+\leavevmode%
+\hbox{\hspace*{-0.075cm}
+\begin{beamercolorbox}[wd=.45\paperwidth,ht=2.25ex,dp=1ex,left]{author in head/foot}%
+        \usebeamerfont{author in head/foot}\hspace*{2ex}\insertshortauthor
+\end{beamercolorbox}%
+\begin{beamercolorbox}[wd=.3\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+        \usebeamerfont{title in head/foot}\insertshorttitle
+\end{beamercolorbox}%
+\begin{beamercolorbox}[wd=.25\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+        \usebeamerfont{date in head/foot}\hspace*{2em}
+        \insertframenumber{}/\inserttotalframenumber\hspace*{2ex}
+\end{beamercolorbox}}%
+\vskip0pt%
+}
+
+\begin{document}
+
+\begin{frame}
+	\titlepage
+\end{frame}
+
+\begin{frame}{Background}
+	\begin{itemize}[<+->]
+		\item Dissemination of infectious disease have been widely studied in the literature.
+		\item The Models developed so far are mostly agent based (Thomas 2010 ; Russels et al. 2008;   Wilensky 1997, 1999).
+		\item {\bf{Our intention : To use a network approach for understanding the diffusion process of the disease in relation to condom use behaviours}}.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Questions}
+	\begin{itemize}[<+->]
+		\item How the number of condom user affect the spread of an sexual transmitted disease?
+		\item How peer effect of condom use affect the first relationship?
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Methods}
+	\begin{itemize}[<+->]
+		\item Adaptation and improvement of an Existing models of AIDS diffusion in Netlogo (Wilensky 1997, 1999).
+		\item Integrate agents into a social network instead of space.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Model}
+	\begin{itemize}
+		\item The network is based on \textcolor{blue}{Barabasi Albert model}, which is an algorithm for generating random scale-free networks using a preferential attachment mechanism.see (Barabasi 1999  : 79-92).
+		\item \textcolor{blue}{Preferential attachment} : The more a node is connected, the more it is likely receive new links. 
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Model}
+	To answer to the proposed questions, we divide the model into two different sub-models that can be used separately or together :
+
+	\begin{itemize}
+		\item Infectious dissemination sub-model.
+		\item Social dissemination sub-model.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Model}
+\framesubtitle{\bf{Infectious dissemination sub-model}}
+	\begin{itemize}
+		\item An individual can have a sexual relation with one of his neighbours depending on the neighbour's \textcolor{red}{sex-appeal}  and his \textcolor{red}{sex-appeal-sensitivity}.
+		\item A couple is formed for a \textcolor{red}{commitment time}, and an individual has to wait for an \textcolor{red}{abstinence time} before looking for another sexual partner. 
+		\item The infection propagates from an infected person to his partner with a normal distributed probability, if both of them don't use condom.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Model}
+\framesubtitle{\bf{Social dissemination sub-model}}
+	An individual can be influenced by his neighbours and change his condom use attitude according to 
+	\begin{itemize}
+		\item His \textcolor{red}{personality}.
+		\item The \textcolor{red}{proportion of neighbours} who may influence him.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Model inputs}
+	\begin{itemize}
+		\item Average sex appeal
+		\item Average infection chance
+		\item Number condom use
+		\item Number infected
+		\item Average commitment
+		\item personality
+	\end{itemize}
+	\only<7>{
+		\begin{block}{}
+			Individual attributes are distributed according to a normal law (around the population average).
+		\end{block}
+	}
+\end{frame}
+
+\begin{frame}{Results}
+	\begin{itemize}[<+->]
+		\item How condom-use behaviour influence the spread of a sexually transmitted disease ?
+		\item All parameters were fixed.
+		\item Sensitivity analysis on number of condom-users.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Results}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=10.0cm]{./img/infected_withoutsocialdissemination.pdf} 
+		\caption{Cumulative hazards for different exits}
+	\end{figure} 
+\end{frame}
+
+\begin{frame}{Results}
+\framesubtitle{\bf{Yes but}}
+	\begin{figure}[H]
+		\centering
+		\subcaptionbox{}[0.3\linewidth][c]{
+		\includegraphics[width=2.0cm, heigth=2.0cm]{./img/condom.png}
+		}
+		$\neq$
+		\subcaptionbox{}[0.3\linewidth][c]{
+		\includegraphics[width=3.0cm, heigth=3.0cm]{./img/vaccin.png}
+		}
+	\end{figure}  
+\end{frame}
+
+\begin{frame}{Results}
+	\framesubtitle{\bf{Peer effect}}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=5.0cm, heigth=5.cm]{./img/peereffect.png}
+	\end{figure} 
+\end{frame}
+
+\begin{frame}{Results}
+\framesubtitle{\bf{Peer effect}}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=5.0cm, heigth=5.cm]{./img/peereffect2.png}
+	\end{figure} 
+\end{frame}
+
+\begin{frame}{Results}
+	\framesubtitle{\bf{Peer effect}}
+	Granovetter 1978 : N noir / N Total $>$ Threshold
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=5.0cm, heigth=5.cm]{./img/peereffect3.png}
+	\end{figure} 
+\end{frame}
+
+\begin{frame}{Results}
+	\begin{center}
+		\bf{Netlogo Model}
+	\end{center}
+\end{frame}
+
+\begin{frame}{Results}
+\framesubtitle{\bf{Peer effect}}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=10.0cm]{./img/Spreadcondom.png}
+	\end{figure} 
+\end{frame}
+
+\begin{frame}{Results}
+\framesubtitle{\bf{Peer effect}}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=10.0cm]{./img/infected_withsocialdissemination.png}
+	\end{figure} 
+\end{frame}
+
+\begin{frame}{Network Position}
+	\begin{itemize}
+		\item Random seed
+		\item Fixed network position
+		\item New fixed position...?
+	\end{itemize}
+
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=5.0cm]{./img/positioneau.png}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Results}
+\framesubtitle{\bf{Peer effect}}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=10.0cm]{./img/Spreadcondom_comparison.png}
+	\end{figure} 
+\end{frame}
+
+\begin{frame}{Results}
+\framesubtitle{\bf{Peer effect}}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=6.0cm]{./img/infected_socialdissemination_comparison.png}
+	\end{figure} 
+\end{frame}
+
+\begin{frame}{Limitations}
+	\begin{itemize}
+		\item Network position.
+		\item Small number of individuals.
+		\item Different dissemination speed : representative?
+		\item Random distribution of parameters.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Perspectives}
+	\begin{itemize}
+		\item Connections with Graphstream.
+		\item Sensitivity analysis on network position.
+			\begin{itemize}
+				\item Hubs.
+				\item Centrality.
+			\end{itemize}
+		\item Spatiality.
+			\begin{itemize}
+				\item « Hot spots ».
+				\item Mobility model.
+			\end{itemize}
+		\item Dynamic network.
+		\item Adjust parameters to littérature : empirical validation.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{\bf{Perspectives}}
+	Public health policies
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=10.0cm]{./img/infected_time_condomuser(2).png}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Betweenness centrality - a connection with Graphstream}
+	\begin{block}{What does the position of a node in the network have over the propagation of the disease?}
+		\begin{center}
+			We use an interface with Graphstream in order to answer to this question.
+		\end{center}
+	\end{block}
+\end{frame}
+
+\begin{frame}{Betweenness centrality - a connection with Graphstream}
+	\begin{block}{How it works?}
+		\begin{itemize}
+			\item Firstly : we get the topology of the network in Graphstream.
+			\item Secondly : We compute on each node the betweenness centrality.
+
+It is the number of all shortest paths passing through a given node. This is used originally in social network and was introduced by Freeman (1977).
+
+			\item Thirdly : we inject a bias on the value of some nodes according to their centrality.
+
+There is many kind of bias : positive or negative, and on the social diffusion of the condom use or on the disease's diffusion.
+
+			\item Problem: We could not make sensibility analysis with these parameter. Error in Java and NetLogo.
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}{References}
+	\begin{itemize}
+		\item Barabasi, A., Albert, R., Jeong, H., 1999. Mean-field theory for scale-free random networks. Physica A : Statistical Mechanics and its Applications 272, 173–187. 
+		\item Wilensky, U. (1997). NetLogo AIDS model. http://ccl.northwestern.edu/netlogo/models/AIDS. Center for Connected Learning and Computer-Based Modeling, Northwestern Institute on Complex Systems, Northwestern University, Evanston, IL. 
+		\item Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern Institute on Complex Systems, Northwestern University, Evanston, IL. 
+		\item Freeman, L.C. (1977). A Set of Measures of Centrality Based on Betweenness, Sociometry, p.35-41.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\begin{center}
+		Thank you for your attention
+	\end{center}
+
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=5.0cm]{./img/DrMario.png}
+	\end{figure}
+\end{frame}
+
+\end{document}
